@@ -4,7 +4,7 @@ Basing on postfix. Designed for an authentication step in front of a mail server
 
 ## Installation
 
-1. Go to the required directory on the server and run the command `git clone https://src.sakhalin.gov.ru/gku/osa/bi-infrastructure/postfix_auth.git`
+1. Go to the required directory on the server and run the command `https://github.com/svnikolaev/postfix_auth.git`
 2. Go to the application directory `cd postfix_auth`
 3. Copy `.env.example` to `.env` with the command `cp .env.example .env`
 
