@@ -1,0 +1,18 @@
+version: '2.1'
+
+services:
+  app:
+    tty: true
+    build:
+      context: .
+    container_name: postfix
+    restart: always
+    ports:
+      - 25:25
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    environment:
+      MAIL_USER: ${MAIL_USER}
+      MAIL_DOMAIN: ${MAIL_DOMAIN}
+      MAIL_PASSWORD: ${MAIL_PASSWORD}

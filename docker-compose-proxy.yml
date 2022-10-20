@@ -1,0 +1,23 @@
+version: '2.1'
+
+services:
+  app:
+    tty: true
+    build:
+      context: .
+      args:
+        http_proxy: ${HTTP_PROXY}
+        https_proxy: ${HTTP_PROXY}
+        HTTP_PROXY: ${HTTP_PROXY}
+        HTTPS_PROXY: ${HTTP_PROXY}
+    container_name: postfix
+    restart: always
+    ports:
+      - 25:25
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    environment:
+      MAIL_USER: ${MAIL_USER}
+      MAIL_DOMAIN: ${MAIL_DOMAIN}
+      MAIL_PASSWORD: ${MAIL_PASSWORD}
